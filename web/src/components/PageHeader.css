@@ -1,0 +1,25 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--borda-dourada);
+}
+
+.page-header h1 {
+  margin: 0;
+  color: var(--branco-texto);
+}
+
+.page-header .btn-primary {
+  background-color: var(--dourado-destaque);
+  border-color: var(--dourado-destaque);
+  color: var(--preto-principal);
+  font-weight: bold;
+}
+
+.page-header .btn-primary:hover {
+  background-color: #ffed4a;
+  border-color: #ffed4a;
+}

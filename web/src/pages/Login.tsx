@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
 import './Login.css';
+import Logo from '../components/Logo'; // Importando o componente Logo
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
@@ -35,48 +36,48 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Container fluid className="login-page d-flex align-items-center justify-content-center vh-100">
-      <Row className="w-100">
-        <Col md={6} className="login-branding d-flex flex-column justify-content-center align-items-center text-white p-5">
-          <h1 className="display-4 text-warning">Sala dos Mestres</h1>
-          <p className="lead">Painel de Gerenciamento</p>
-        </Col>
-        <Col md={6} className="login-form-section d-flex align-items-center justify-content-center p-5">
-          <Card className="login-box p-4 w-100">
-            <Card.Body>
-              <h2 className="text-center mb-4">Admin Login</h2>
-              {error && <Alert variant="danger">{error}</Alert>}
-              <Form onSubmit={handleLogin}>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Seu email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </Form.Group>
+    <div className="login-container">
+      <div className="login-left">
+        <div className="login-logo">
+          <Logo />
+        </div>
+      </div>
+      <div className="login-right">
+        <div className="login-form-wrapper">
+          <h2 className="text-center mb-4">Bem-vindo de volta!</h2>
+          <p className="text-center text-muted mb-4">Faça login para acessar o painel.</p>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form onSubmit={handleLogin}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="seu@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="login-input"
+              />
+            </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label>Senha</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Sua senha"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </Form.Group>
-                <Button variant="warning" type="submit" className="w-100 mt-3">
-                  Entrar
-                </Button>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
+            <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Label>Senha</Form.Label>
+              <Form.Control
+                type="password"
+                placeholder="Sua senha"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="login-input"
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="w-100 mt-3 login-button">
+              Entrar
+            </Button>
+          </Form>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Table, Button, Alert, Modal } from 'react-bootstrap';
 import AddEncontroForm from '../components/AddEncontroForm';
 import EditEncontroForm from '../components/EditEncontroForm';
+import PageHeader from '../components/PageHeader';
 import './Encontros.css';
 
 // Definindo a "forma" de um objeto Encontro
@@ -72,11 +73,12 @@ const EncontrosPage: React.FC = () => {
   if (error) return <Alert variant="danger">{error}</Alert>;
 
   return (
-    <Container fluid className="encontros-page">
-      <h1 className="mb-4">Gerenciamento de Encontros da Sala</h1>
-      <Button variant="warning" className="mb-3" onClick={() => setShowAddModal(true)}>
-        Adicionar Novo Encontro
-      </Button>
+        <Container fluid className="encontros-page">
+      <PageHeader 
+        title="Gerenciamento de Encontros da Sala"
+        buttonText="Adicionar Novo Encontro"
+        onButtonClick={() => setShowAddModal(true)}
+      />
 
       <Modal show={showAddModal} onHide={() => setShowAddModal(false)} size="lg">
         <Modal.Header closeButton>

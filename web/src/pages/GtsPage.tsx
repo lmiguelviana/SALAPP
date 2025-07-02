@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Table, Button, Alert, Modal } from 'react-bootstrap';
 import AddGtForm from '../components/AddGtForm';
 import EditGtForm from '../components/EditGtForm';
+import PageHeader from '../components/PageHeader';
 import './Gts.css';
 
 // Definindo a "forma" de um objeto GT
@@ -75,11 +76,12 @@ const GtsPage: React.FC = () => {
   if (error) return <Alert variant="danger">{error}</Alert>;
 
   return (
-    <Container fluid className="gts-page">
-      <h1 className="mb-4">Gerenciamento de GTs</h1>
-      <Button variant="warning" className="mb-3" onClick={() => setShowAddModal(true)}>
-        Adicionar Novo GT
-      </Button>
+        <Container fluid className="gts-page">
+      <PageHeader 
+        title="Gerenciamento de GTs"
+        buttonText="Adicionar Novo GT"
+        onButtonClick={() => setShowAddModal(true)}
+      />
 
       <Modal show={showAddModal} onHide={() => setShowAddModal(false)} size="lg">
         <Modal.Header closeButton>

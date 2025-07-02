@@ -1,56 +1,128 @@
 .admin-layout {
+  display: flex;
   min-height: 100vh;
+  background-color: var(--preto-principal);
+  transition: margin-left 0.3s ease;
 }
 
-.sidebar {
-  width: 250px;
-  flex-shrink: 0;
-  background-color: #1a1a1a; /* Fundo escuro para a sidebar */
-  color: #ffffff;
+.floating-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 240px;
+  background: var(--fundo-componente);
+  border-right: 1px solid var(--borda-dourada);
+  z-index: 1000;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .sidebar-header {
-  padding: 20px;
-  text-align: center;
-  border-bottom: 1px solid #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--borda-dourada);
 }
 
-.sidebar-header h2 {
-  color: #ffd700; /* Dourado */
-  margin: 0;
+.sidebar-toggle {
+  background: transparent;
+  border: none;
+  color: var(--branco-texto);
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
-.sidebar-nav .nav-link {
-  padding: 15px 20px;
-  color: #cccccc; /* Cor padrão dos links */
-  transition: background-color 0.3s, color 0.3s;
+.sidebar-content {
+  padding: 2rem 1.5rem;
 }
 
-.sidebar-nav .nav-link:hover,
-.sidebar-nav .nav-link.active {
-  background-color: #ffd700; /* Dourado no hover/ativo */
-  color: #1a1a1a; /* Texto escuro no hover/ativo */
+.floating-sidebar .nav-link {
+  color: var(--branco-texto);
+  padding: 0.8rem 1rem;
+  margin: 0.3rem 0;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.floating-sidebar .nav-link svg {
+  font-size: 1.2rem;
+  min-width: 20px;
+}
+
+.floating-sidebar .nav-link:hover {
+  background-color: var(--borda-dourada);
+  color: var(--dourado-destaque);
+}
+
+.floating-sidebar .nav-link.active {
+  background-color: var(--borda-dourada);
+  color: var(--dourado-destaque);
+  font-weight: 700;
 }
 
 .main-content {
-  background-color: #f4f7fa; /* Fundo geral um pouco mais claro */
-  padding: 20px;
+  margin-left: 240px;
+  padding: 2rem;
+  width: calc(100% - 240px);
   flex-grow: 1;
-  overflow-y: auto;
+  transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
-/* Ajustes para o Offcanvas (menu responsivo) */
-.offcanvas.offcanvas-end {
-  width: 250px;
+/* Estilos para a sidebar recolhida */
+.admin-layout.sidebar-collapsed .floating-sidebar {
+  width: 80px;
 }
 
-.offcanvas-header {
-  background-color: #1a1a1a;
-  border-bottom: 1px solid #333;
+.admin-layout.sidebar-collapsed .main-content {
+  margin-left: 80px;
+  width: calc(100% - 80px);
 }
 
-.offcanvas-title {
-  color: #ffd700;
+.admin-layout.sidebar-collapsed .sidebar-header {
+  justify-content: center;
+}
+
+.admin-layout.sidebar-collapsed .nav-link span {
+  display: none;
+}
+
+.admin-layout.sidebar-collapsed .nav-link {
+  justify-content: center;
+  padding: 0.8rem 0;
+  gap: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .floating-sidebar {
+    width: 80px;
+  }
+
+  .main-content {
+    margin-left: 80px;
+    width: calc(100% - 80px);
+  }
+
+
+
+  .nav-link span {
+    display: none;
+  }
+
+  .nav-link {
+    justify-content: center;
+  }
+
+
 }
 
 .offcanvas-body .nav-link {

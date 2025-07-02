@@ -1,3 +1,11 @@
+.users-page {
+  background-color: #121212; /* Cor de fundo escura */
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
 .users-page h1 {
   color: #333;
   margin-bottom: 20px;

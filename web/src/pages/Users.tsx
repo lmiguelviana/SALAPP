@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Container, Table, Button, Alert, Modal } from 'react-bootstrap';
 import AddUserForm from '../components/AddUserForm';
 import EditUserForm from '../components/EditUserForm';
+import PageHeader from '../components/PageHeader'; // Importa o novo componente
 import './Users.css';
 
 // Definindo a "forma" de um objeto de usuário
@@ -70,11 +71,12 @@ const UsersPage: React.FC = () => {
   if (error) return <Alert variant="danger">{error}</Alert>;
 
   return (
-    <Container fluid className="users-page">
-      <h1 className="mb-4">Gerenciamento de Usuários</h1>
-      <Button variant="warning" className="mb-3" onClick={() => setShowAddModal(true)}>
-        Adicionar Novo Usuário
-      </Button>
+        <Container fluid className="users-page">
+      <PageHeader 
+        title="Gerenciamento de Usuários"
+        buttonText="Adicionar Novo Usuário"
+        onButtonClick={() => setShowAddModal(true)}
+      />
 
       <Modal show={showAddModal} onHide={() => setShowAddModal(false)} size="lg">
         <Modal.Header closeButton>
