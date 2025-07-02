@@ -1,0 +1,7 @@
+Launching lib\main.dart on Chrome in debug mode...
+lib/screens/profile_screen.dart:46:47: Error: The method 'LoginScreen' isn't defined for the class
+'_ProfileScreenState'.
+ - '_ProfileScreenState' is from 'package:salaapp/screens/profile_screen.dart' ('lib/screens/profile_screen.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'LoginScreen'.
+      MaterialPageRoute(builder: (context) => LoginScreen()), // Assumindo que LoginScreen é a tela de login
+                                              ^^^^^^^^^^^

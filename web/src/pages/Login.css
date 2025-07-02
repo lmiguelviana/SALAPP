@@ -1,0 +1,37 @@
+
+/* Estrutura da página inteira */
+.login-page {
+  background-color: #f0f2f5; /* Fundo geral */
+}
+
+.login-branding {
+  background-color: #1a1a1a; /* Fundo escuro para a seção de branding */
+}
+
+.login-form-section {
+  background-color: #ffffff; /* Fundo claro para a seção do formulário */
+}
+
+.login-box {
+  border: none; /* Remove a borda padrão do card */
+  box-shadow: none; /* Remove a sombra padrão do card */
+}
+
+/* Ajustes para o botão de login */
+.btn-warning {
+  background-color: #ffd700 !important; /* Dourado */
+  border-color: #ffd700 !important;
+  color: #1a1a1a !important;
+}
+
+.btn-warning:hover {
+  background-color: #e6c300 !important; /* Dourado mais escuro no hover */
+  border-color: #e6c300 !important;
+}
+
+/* Media Query para responsividade */
+@media (max-width: 767.98px) {
+  .login-branding {
+    min-height: 200px; /* Altura mínima para o branding em telas pequenas */
+  }
+}

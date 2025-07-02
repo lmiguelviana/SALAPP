@@ -1,0 +1,64 @@
+.admin-layout {
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  flex-shrink: 0;
+  background-color: #1a1a1a; /* Fundo escuro para a sidebar */
+  color: #ffffff;
+}
+
+.sidebar-header {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+.sidebar-header h2 {
+  color: #ffd700; /* Dourado */
+  margin: 0;
+}
+
+.sidebar-nav .nav-link {
+  padding: 15px 20px;
+  color: #cccccc; /* Cor padrão dos links */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar-nav .nav-link:hover,
+.sidebar-nav .nav-link.active {
+  background-color: #ffd700; /* Dourado no hover/ativo */
+  color: #1a1a1a; /* Texto escuro no hover/ativo */
+}
+
+.main-content {
+  background-color: #f4f7fa; /* Fundo geral um pouco mais claro */
+  padding: 20px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+/* Ajustes para o Offcanvas (menu responsivo) */
+.offcanvas.offcanvas-end {
+  width: 250px;
+}
+
+.offcanvas-header {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #333;
+}
+
+.offcanvas-title {
+  color: #ffd700;
+}
+
+.offcanvas-body .nav-link {
+  color: #cccccc;
+}
+
+.offcanvas-body .nav-link:hover,
+.offcanvas-body .nav-link.active {
+  background-color: #ffd700;
+  color: #1a1a1a;
+}

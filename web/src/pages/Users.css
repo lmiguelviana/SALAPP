@@ -1,0 +1,31 @@
+.users-page h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.users-table {
+  margin-top: 20px;
+}
+
+/* Estilos para os botões de ação dentro da tabela */
+.users-table .btn-info {
+  background-color: #2196F3 !important; /* Azul */
+  border-color: #2196F3 !important;
+}
+
+.users-table .btn-danger {
+  background-color: #f44336 !important; /* Vermelho */
+  border-color: #f44336 !important;
+}
+
+/* Estilos para o botão de adicionar usuário */
+.users-page .btn-warning {
+  background-color: #ffd700 !important; /* Dourado */
+  border-color: #ffd700 !important;
+  color: #1a1a1a !important;
+}
+
+.users-page .btn-warning:hover {
+  background-color: #e6c300 !important; /* Dourado mais escuro no hover */
+  border-color: #e6c300 !important;
+}

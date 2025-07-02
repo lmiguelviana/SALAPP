@@ -1,0 +1,32 @@
+.restaurantes-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.restaurantes-section h4 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.restaurantes-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.restaurantes-table th,
+.restaurantes-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.restaurantes-table th {
+  background-color: #f9f9f9;
+  font-weight: 600;
+}
+
+.restaurantes-table .action-button {
+  margin-right: 5px;
+}

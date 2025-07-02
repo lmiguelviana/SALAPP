@@ -1,0 +1,41 @@
+.dashboard-page h1 {
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.summary-card .card-title {
+  color: #cccccc;
+  font-size: 1.2rem;
+}
+
+.summary-card .count-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffd700; /* Dourado */
+}
+
+.latest-card .card-header {
+  font-weight: bold;
+}
+
+.latest-card .list-group-item {
+  border-color: #eee;
+}
+
+.latest-card .list-group-item:last-child {
+  border-bottom: none;
+}
+
+.latest-card p {
+  color: #888;
+  text-align: center;
+  padding: 20px;
+}
+
+.error-message {
+  color: #d93025;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  border-radius: 4px;
+}
